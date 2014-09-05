@@ -8,20 +8,6 @@ var randPassword = function() {
   return Math.random().toString(36);
 };
 
-Meteor.publish('postsAll', function() {
-  Meteor.publishWithRelations({
-    handle: this,
-
-    collection: Posts,
-    filter: {},
-
-    mappings: [{
-      collection: Meteor.users,
-      key: 'userId'
-    }]
-  });
-});
-
 Meteor.startup(function () {
   if (Posts.find().count() === 0) {
     var users = [
