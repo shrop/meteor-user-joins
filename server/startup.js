@@ -1,8 +1,8 @@
 var randUserId = function() {
-  users = Meteor.users.find().fetch();
-  randomIndex = Math.floor(Math.random() * users.length);
+  var users = Meteor.users.find().fetch();
+  var randomIndex = Math.floor(Math.random() * users.length);
   return users[randomIndex]._id;
-}
+};
 
 Meteor.publish('postsAll', function() {
   Meteor.publishWithRelations({
@@ -16,7 +16,7 @@ Meteor.publish('postsAll', function() {
       key: 'userId'
     }]
   });
-})
+});
 
 Meteor.startup(function () {
   if (Posts.find().count() === 0) {
@@ -80,7 +80,7 @@ Meteor.startup(function () {
       }
     ];
 
-    for (var i = 0; i < posts.length; i++) {
+    for (i = 0; i < posts.length; i++) {
       Posts.insert(posts[i]);
     }
   }
