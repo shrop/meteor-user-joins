@@ -4,6 +4,10 @@ var randUserId = function() {
   return users[randomIndex]._id;
 };
 
+var randPassword = function() {
+  return Math.random().toString(36);
+};
+
 Meteor.publish('postsAll', function() {
   Meteor.publishWithRelations({
     handle: this,
@@ -23,7 +27,7 @@ Meteor.startup(function () {
     var users = [
       {
         email: 'BobFranks@example.com',
-        password: 'password',
+        password: randPassword(),
         profile: {
           firstName: 'Bob',
           lastName: 'Franks',
@@ -31,7 +35,7 @@ Meteor.startup(function () {
       },
       {
         email: 'SarahBurger@example.com',
-        password: 'password',
+        password: randPassword(),
         profile: {
           firstName: 'Sarah',
           lastName: 'Burger',
@@ -39,7 +43,7 @@ Meteor.startup(function () {
       },
       {
         email: 'EdSandwich@example.com',
-        password: 'password',
+        password: randPassword(),
         profile: {
           firstName: 'Ed',
           lastName: 'Sandwich',
