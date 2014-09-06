@@ -41,8 +41,6 @@ Meteor.startup(function () {
       Accounts.createUser(users[i]);
     }
 
-    var uid = Meteor.users.findOne();
-
     var posts = [
       {
         title: 'Lorem ipsum dolor sit amet',
