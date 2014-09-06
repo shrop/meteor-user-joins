@@ -4,7 +4,8 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-insecure
 mrt:publish-with-relations
 accounts-base
 accounts-password
+less
+mizzao:bootstrap-3
